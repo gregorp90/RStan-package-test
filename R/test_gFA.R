@@ -1,13 +1,12 @@
-#' Predict from FA model
+#' Predict from grouped FA model
 #'
-#' This function predicts based on the estimation of the FA
-#' model \code{train_FA}.
+#' This function predicts based on the estimation of the gFA
+#' model \code{train_gFA}.
 #'
 #' @export
 #' @param tr_fa An object resulting from \code{train_FA}.
 #' @param gp_test A vector of groups for each observation.
 #' @param test data frame. Test data set for evaluation.
-#' @param logl logical. Return log-likelihood? Defaults to TRUE.
 #' @param L_intg logical. Should the likelihood be integrated across
 #' suitable borders? Defaults to FALSE, which uses an approximation with
 #' MVN density.
@@ -19,7 +18,7 @@
 #'   \item{log_lik}{A numeric vector of log-likelihoods for all observations
 #'   in the test set.}
 #' @seealso \code{\link{train_FA}}
-test_FA <- function (tr_fa, gp_test, test, logl = T, L_intg = F) {
+test_gFA <- function (tr_fa, gp_test, test, logl = T, L_intg = F) {
   predictions <- matrix(data = NA, nrow=length(gp_test), ncol=ncol(tr_fa$train))
   loadings    <- matrix(tr_fa$loadings, ncol = ncol(tr_fa$loadings))
   scores      <- t(as.matrix(tr_fa$scores))

@@ -14,9 +14,10 @@ pred_iPoiss(tr_fa, gp_test, test)
 \item{test}{data frame. Test data set for evaluation.}
 }
 \value{
-A list with two elements. First are the predictions of test data.
-  Second is the log_likelihood of predictions.
+A list.
   \item{predictions}{A numeric vector of predictions for all observations
+  in the test set.}
+  \item{log_lik}{A numeric vector of log-likelihoods for all observations
   in the test set.}
 }
 \description{

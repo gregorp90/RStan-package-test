@@ -13,11 +13,16 @@ Columns represent variables, rows represent observations.}
 \item{gp_train}{vector. Groups for each observation.}
 }
 \value{
-list with three elements. First is the Poisson parameters for
-  each variable-group combination. Second is the train data set. Third is
-  the group vector.
+A list.
+  \item{params}{A matrix of Poisson parameters for each group-variable
+  combination. Rows represent groups, columns represent variables.}
+  \item{train}{Train data set.}
+  \item{gp_train}{Groups of the train data set.}
 }
 \description{
 This function trains an independent Poisson model for multivariate
 count estimation.
+}
+\seealso{
+\code{\link{pred_iPoiss}}
 }

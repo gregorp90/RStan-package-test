@@ -1,10 +1,11 @@
-#' Train a factor analysis model
+#' Train a grouped factor analysis model
 #'
-#' This function trains a factor analysis model in Stan.
+#' This function trains a factor analysis model in Stan, where the factors
+#' are grouped.
 #'
 #' @export
 #' @param train data frame. The training data set, consisting of counts.
-#'   Columns represent variables, rows represent observations.
+#'   Columns represent variables, rows represent observations..
 #' @param gp_train A vector of groups for each observation.
 #' @param nfac numeric. The number of factors.
 #' @param ... Arguments passed to \code{rstan::sampling} (e.g. iter,
@@ -16,7 +17,7 @@
 #' \item{scores}{Aggregated factor scores.}
 #' \item{noise}{Aggregated residual covariance matrix.}
 #' \item{stan_mod}{An object of S4 class \code{stanfit}.}
-train_FA <- function (train, gp_train, nfac = 2, ...) {
+train_gFA <- function (train, gp_train, nfac = 2, ...) {
   X <- scale(train)
   X <- t(X)
   n <- ncol(X)
@@ -29,7 +30,7 @@ train_FA <- function (train, gp_train, nfac = 2, ...) {
                     g  = g,
                     ng = max(g),
                     X  = X)
-  blr      <- rstan::sampling(stanmodels$FA, data = stan_data, ...)
+  blr      <- rstan::sampling(stanmodels$gFA, data = stan_data, ...)
   ext      <- extract(blr)
   lambda   <- ext$L_tri
   lambda   <- apply(lambda, MARGIN = c(2,3), FUN = median)
