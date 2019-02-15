@@ -36,14 +36,12 @@ test_FA <- function (tr_fa, gp_test, test, logl = T, L_intg = F) {
                                       times = sum(ind)),
                                   nrow = sum(ind), byrow = T)
   }
-
   predictions <- as.matrix(pr_factors[ ,-1]) %*% t(loadings)
   means       <- apply(tr_fa$train, MARGIN = 2, FUN = mean)
   sds         <- apply(tr_fa$train, MARGIN = 2, FUN = sd)
   predictions <- sweep(predictions, 2, sds, '*')
   predictions <- sweep(predictions, 2, means, '+')
   predictions <- round(predictions)
-
   log_lik     <- likelihood_cl(test, predictions, tr_fa, logl,
                                integrate = L_intg)
   return (list(predictions = predictions,
