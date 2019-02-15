@@ -35,7 +35,7 @@ train_CNBFA2 <- function (train, gp_train, nfac = 2, ...) {
                     g  = g,
                     ng = max(g),
                     X  = X)
-  blr      <- rstan::sampling(stanmodels$NBFA2, data = stan_data)
+  blr      <- rstan::sampling(stanmodels$NBFA2, data = stan_data, ...)
   ext      <- extract(blr)
   lambda   <- apply(ext$Psi, MARGIN = c(2,3), FUN = median)
   factors  <- apply(ext$Theta, MARGIN = c(2,3), FUN = median)

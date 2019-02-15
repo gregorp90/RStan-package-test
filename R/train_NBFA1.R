@@ -19,7 +19,7 @@
 #' \item{probs}{Aggregated probability parameters.}
 #' \item{phi}{Aggregated size parameters.}
 #' \item{stan_mod}{An object of S4 class \code{stanfit}.}
-train_NBFA1 <- function (train, gp_train, nfac = 2) {
+train_NBFA1 <- function (train, gp_train, nfac = 2, ...) {
   X <- t(train)
   n <- ncol(X)
   m <- nrow(X)
@@ -31,7 +31,7 @@ train_NBFA1 <- function (train, gp_train, nfac = 2) {
                     g  = g,
                     ng = max(g),
                     X  = X)
-  blr      <- rstan::sampling(stanmodels$NBFA1, data = stan_data)
+  blr      <- rstan::sampling(stanmodels$NBFA1, data = stan_data, ...)
   ext      <- extract(blr)
   lambda   <- apply(ext$Psi, MARGIN = c(2,3), FUN = median)
   factors  <- apply(ext$Theta, MARGIN = c(2,3), FUN = median)

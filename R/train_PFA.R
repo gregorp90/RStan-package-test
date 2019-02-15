@@ -15,7 +15,7 @@
 #' \item{loadings}{Aggregated loadings.}
 #' \item{scores}{Aggregated factor scores.}
 #' \item{stan_mod}{An object of S4 class \code{stanfit}.}
-train_PFA <- function (train, gp_train, nfac = 2) {
+train_PFA <- function (train, gp_train, nfac = 2, ...) {
   X <- t(train)
   n <- ncol(X)
   m <- nrow(X)
@@ -27,7 +27,7 @@ train_PFA <- function (train, gp_train, nfac = 2) {
                     g  = g,
                     ng = max(g),
                     X  = X)
-  blr      <- rstan::sampling(stanmodels$PFA, data = stan_data)
+  blr      <- rstan::sampling(stanmodels$PFA, data = stan_data, ...)
   ext      <- extract(blr)
   lambda   <- apply(ext$Psi, MARGIN = c(2,3), FUN = median)
   factors  <- apply(ext$Theta, MARGIN = c(2,3), FUN = median)

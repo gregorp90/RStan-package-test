@@ -37,7 +37,7 @@ train_CFA <- function (train, gp_train, nfac = 2, ...) {
                     g  = g,
                     ng = max(g),
                     X  = X)
-  blr      <- rstan::sampling(stanmodels$gFA, data = stan_data)
+  blr      <- rstan::sampling(stanmodels$gFA, data = stan_data, ...)
   ext      <- extract(blr)
   lambda   <- ext$L_tri
   lambda   <- apply(lambda, MARGIN = c(2,3), FUN = median)
