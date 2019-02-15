@@ -61,7 +61,7 @@ train_CNBFA2 <- function (train, gp_train, nfac = 2, ...) {
     m      = ncol(X),
     X      = as.matrix(X)
   )
-  blr2    <- rstan::sampling(stanmodels$corr_est, data = stan_data)
+  blr2    <- rstan::sampling(stanmodels$corr_est, data = stan_data, ...)
   ext     <- extract(blr2)
   sig_est <- apply(ext$Sigma, c(2,3), median)
   return (list(train    = train,

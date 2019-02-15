@@ -7,7 +7,6 @@
 #'   \describe{
 #'     \item{price}{price, in US dollars}
 #'     \item{carat}{weight of the diamond, in carats}
-#'     \item{}{}
 #'   }
 #' \item A vector of teams.
 #' @source \url{http://www.diamondse.info/}
