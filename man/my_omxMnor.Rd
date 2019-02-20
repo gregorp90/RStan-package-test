@@ -2,7 +2,7 @@
 % Please edit documentation in R/my_omxMnor.R
 \name{my_omxMnor}
 \alias{my_omxMnor}
-\title{Calculate the integrated density.}
+\title{Calculate the integrated density}
 \usage{
 my_omxMnor(my_vec, l, logl)
 }

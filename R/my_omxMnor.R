@@ -1,4 +1,4 @@
-#' Calculate the integrated density.
+#' Calculate the integrated density
 #'
 #' This function calculates the MVN density by integrating along
 #' corresponding bounds.

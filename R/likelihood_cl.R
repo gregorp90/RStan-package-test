@@ -1,4 +1,4 @@
-#' Calculate the likelihood for the FA and gFA models.
+#' Calculate the likelihood for the FA and gFA models
 #'
 #' This function calculates the MVN likelihood for factor analysis methods.
 #' If \code{L_intg = FALSE} then an approximation with point-density is used

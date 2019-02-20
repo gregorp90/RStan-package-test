@@ -1,4 +1,4 @@
-#' Calculate the density.
+#' Calculate the density
 #'
 #' This function calculates the MVN density.
 #'

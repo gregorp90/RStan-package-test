@@ -2,7 +2,7 @@
 % Please edit documentation in R/my_dmvn.R
 \name{my_dmvn}
 \alias{my_dmvn}
-\title{Calculate the density.}
+\title{Calculate the density}
 \usage{
 my_dmvn(my_vec, l, logl)
 }

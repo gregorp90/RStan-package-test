@@ -2,7 +2,7 @@
 % Please edit documentation in R/likelihood_cl.R
 \name{likelihood_cl}
 \alias{likelihood_cl}
-\title{Calculate the likelihood for the FA and gFA models.}
+\title{Calculate the likelihood for the FA and gFA models}
 \usage{
 likelihood_cl(test, pred, tr_fa, logl = TRUE, integrate = FALSE,
   truncate = FALSE)
