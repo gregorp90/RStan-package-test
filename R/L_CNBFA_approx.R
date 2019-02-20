@@ -1,20 +1,21 @@
-#' Compute copula likelihood with Poisson marginals
+#' Compute NB copula likelihood
 #'
 #' This function computes the approximated likelihood of a Gaussian copula with
-#' Poisson marginals. Integration in the calculation of the exact
+#' NB marginals. Integration in the calculation of the exact
 #' likelihood can be computationally expensive, especially in high dimensions,
 #' therefore this function provides us with an approximation of the integral.
 #'
 #' @export
 #' @param obs vector. The data point.
-#' @param Theta vector. The estimated Poisson parameter for this observation.
+#' @param size vector. The estimated size parameter.
+#' @param mu vector. The estimated mean parameter.
 #' @param Gamma matrix. The estimated correlation matrix.
 #' @param logl logical. Should the output be log-likelihood?
 #' @return The (log-)likelihood.
-L_CPFA_approx <- function (obs, Theta, Gamma, logl = T) {
+L_CNBFA_approx <- function (obs, size, mu, Gamma, logl = T) {
   obs    <- as.numeric(obs)
-  a      <- ppois(obs - 1, Theta)
-  b      <- ppois(obs, Theta)
+  a      <- pnbinom(obs - 1, size = size, mu = mu)
+  b      <- pnbinom(obs, size = size, mu = mu)
   int_fun <- function (x, Sigma) {
     val <- dmvnorm(qnorm(x), sigma = Sigma)
     jac <- prod(1 / (dnorm(qnorm(x))))

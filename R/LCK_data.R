@@ -1,6 +1,6 @@
 #' League of Legends data
 #'
-#' A dataset containing the LCK statistics for the summer 2018 season.
+#' A data set containing the LCK statistics for the summer 2018 season.
 #'
 #' \itemize{
 #'     \item{K}{Champion kills}
@@ -22,13 +22,17 @@
 #' }
 #'
 #'
-#' @name LCK_dat
+#' @name LCK_data
 #' @format A list with four elements.
 #'   \describe{
-#'     \item{data frame}{A data frame with ...}
-#'     \item{vector}{groups}
-#'     \item{splits}{splits}
-#'     \item{support info}{support info}
+#'     \item{fa_data}{A data frame with 494 rows and 16 columns.}
+#'     \item{group}{A vector of team names for each observation.}
+#'     \item{splits}{A data frame with one column which represent a
+#'     time-respecting data split (first half of 2018 summer season
+#'     for train, and the second half for test). 2 stands for the train
+#'     observations and 1 stands for test observations.}
+#'     \item{sup_data}{A data frame with one column which represents the
+#'     datetime of the game.}
 #'   }
 #' @source \url{https://oracleselixir.com/}
 NULL

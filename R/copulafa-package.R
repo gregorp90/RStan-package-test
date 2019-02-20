@@ -1,7 +1,12 @@
 #' The 'copulafa' package.
-#' 
-#' @description A DESCRIPTION OF THE PACKAGE
-#' 
+#'
+#' @description The package contains several factor analysis methods, with
+#' emphasis to count data. The main methods rely on copulas to estimate the
+#' residual covariance, not explained by the latent structure. Additionally, the
+#' package contains four data sets for empirical evaluation and one baseline
+#' model. The methods use RStan for inference, the only exception is the
+#' iPoiss method where we use conjugate posterior.
+#'
 #' @docType package
 #' @name copulafa-package
 #' @aliases copulafa
@@ -10,8 +15,8 @@
 #' @import Rcpp
 #' @import rstantools
 #' @importFrom rstan sampling
-#' 
-#' @references 
+#'
+#' @references
 #' Stan Development Team (2018). RStan: the R interface to Stan. R package version 2.18.2. http://mc-stan.org
-#' 
+#'
 NULL

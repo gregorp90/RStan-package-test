@@ -1,6 +1,7 @@
-#' Train a copula PFA model with Stan
+#' Train a copula PFA model
 #'
-#' This function trains a copula PFA model in Stan.
+#' This function trains a copula factor analysis model with
+#' Poisson marginals in Stan.
 #'
 #' The transformations are made separately, between the modeling of
 #' marginals and the correlation.
@@ -8,7 +9,7 @@
 #' @export
 #' @param train data frame. The training data set, consisting of counts.
 #'   Columns represent variables, rows represent observations.
-#' @param gp_train A vector of groups for each observation.
+#' @param gp_train vector. Groups for each observation.
 #' @param nfac numeric. The number of factors.
 #' @param ... Arguments passed to \code{rstan::sampling} (e.g. iter,
 #' chains).

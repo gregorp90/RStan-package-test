@@ -5,7 +5,7 @@
 #' @export
 #' @param train data frame. The training data set, consisting of counts.
 #'   Columns represent variables, rows represent observations.
-#' @param gp_train A vector of groups for each observation.
+#' @param gp_train vector. Groups for each observation.
 #' @param nfac numeric. The number of factors.
 #' @param ... Arguments passed to \code{rstan::sampling} (e.g. iter,
 #' chains).

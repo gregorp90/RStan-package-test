@@ -1,17 +1,21 @@
 #' Calculate the likelihood for the FA and gFA models.
 #'
-#' This function calculates the MVN likelihood.
+#' This function calculates the MVN likelihood for factor analysis methods.
+#' If \code{L_intg = FALSE} then an approximation with point-density is used
+#' instead of integrating over suitable bounds.
 #'
 #' @export
 #' @param test data frame. Test data set for evaluation.
 #' @param pred data frame or matrix. The provided predictions.
 #' @param tr_fa Test dataset (for evaluation).
-#' @param L_intg logical. Should the likelihood be integrated across
+#' @param logl logical. Should the output be log-likelihood?
+#' @param L_intg logical. Should the likelihood be integrated over
 #' suitable borders? Defaults to FALSE, which uses an approximation with
-#' MVN density.
+#' point-MVN density.
 #' Special care needs to be taken when integrating, as the likelihood is
-#' likely to be 0 in higher dimensions due to machine precision.
-#' @return numeric vector. The (log) likelihood for each test observation.
+#' likely to be 0 in higher dimensions due to machine precision, resulting in
+#' non-finite log-likelihood.
+#' @return numeric vector. The (log-)likelihood for each test observation.
 #' @seealso \code{\link{my_dmvn}} \code{\link{my_omxMnor}}
 likelihood_cl <- function (test, pred, tr_fa, logl = TRUE, integrate = FALSE,
                            truncate = FALSE) {

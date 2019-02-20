@@ -1,4 +1,4 @@
-#' Compute normal copula likelihood
+#' Compute approximate copula likelihood with normal marginals
 #'
 #' This function computes the approximated likelihood of a Gaussian copula with
 #' normal marginals. Integration in the calculation of the exact
@@ -6,12 +6,13 @@
 #' therefore this function provides us with an approximation of the integral.
 #'
 #' @export
-#' @param obs The data point.
-#' @param mu The estimated mean parameter.
-#' @param sd The estimated standard deviation.
-#' @param Gamma The estimated covariance matrix.
-#' @param logl Should the output be log-likelihood?
-#' @param sd_train The standard deviation of the original data.
+#' @param obs vector. The data point.
+#' @param mu vector. The estimated mean parameter.
+#' @param sd vector. The estimated standard deviation.
+#' @param Gamma matrix. The estimated correlation matrix.
+#' @param logl logical. Should the output be log-likelihood?
+#' @param sd_train vector. The standard deviation of the original
+#' (unstandardized) data.
 #' @return The (log-)likelihood.
 L_CFA_approx <- function (obs, mu, sd, Gamma, logl = T, sd_train) {
   obs    <- as.numeric(obs)
