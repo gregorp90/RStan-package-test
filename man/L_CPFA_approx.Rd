@@ -2,7 +2,7 @@
 % Please edit documentation in R/L_CPFA_approx.R
 \name{L_CPFA_approx}
 \alias{L_CPFA_approx}
-\title{Compute copula likelihood with Poisson marginals}
+\title{Compute approximate copula likelihood with Poisson marginals}
 \usage{
 L_CPFA_approx(obs, Theta, Gamma, logl = T)
 }

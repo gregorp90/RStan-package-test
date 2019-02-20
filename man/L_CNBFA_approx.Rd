@@ -2,7 +2,7 @@
 % Please edit documentation in R/L_CNBFA_approx.R
 \name{L_CNBFA_approx}
 \alias{L_CNBFA_approx}
-\title{Compute NB copula likelihood}
+\title{Compute approximate copula likelihood with negative binomial marginals}
 \usage{
 L_CNBFA_approx(obs, size, mu, Gamma, logl = T)
 }

@@ -1,4 +1,4 @@
-#' Compute copula likelihood with Poisson marginals
+#' Compute approximate copula likelihood with Poisson marginals
 #'
 #' This function computes the approximated likelihood of a Gaussian copula with
 #' Poisson marginals. Integration in the calculation of the exact

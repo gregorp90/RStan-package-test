@@ -1,4 +1,4 @@
-#' Compute NB copula likelihood
+#' Compute approximate copula likelihood with negative binomial marginals
 #'
 #' This function computes the approximated likelihood of a Gaussian copula with
 #' NB marginals. Integration in the calculation of the exact
