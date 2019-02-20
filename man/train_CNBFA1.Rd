@@ -2,7 +2,7 @@
 % Please edit documentation in R/train_CNBFA1.R
 \name{train_CNBFA1}
 \alias{train_CNBFA1}
-\title{Train a copula NBFA1 model with Stan}
+\title{Train a copula NBFA1 model}
 \usage{
 train_CNBFA1(train, gp_train, nfac = 2, ...)
 }
@@ -10,7 +10,7 @@ train_CNBFA1(train, gp_train, nfac = 2, ...)
 \item{train}{data frame. The training data set, consisting of counts.
 Columns represent variables, rows represent observations.}
 
-\item{gp_train}{A vector of groups for each observation.}
+\item{gp_train}{vector. Groups for each observation.}
 
 \item{nfac}{numeric. The number of factors.}
 
@@ -31,7 +31,9 @@ Both are objects of S4 class \code{stanfit}. First is the marginal
 distribution estimation, second is the copula.}
 }
 \description{
-This function trains a copula NBFA1 model in Stan.
+This function trains a copula factor analysis model with
+negative binomial marginals in Stan. Each group is assigned its own
+scaling parameter.
 }
 \details{
 The transformations are made separately, between the modeling of

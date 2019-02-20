@@ -14,17 +14,22 @@ likelihood_cl(test, pred, tr_fa, logl = TRUE, integrate = FALSE,
 
 \item{tr_fa}{Test dataset (for evaluation).}
 
-\item{L_intg}{logical. Should the likelihood be integrated across
+\item{logl}{logical. Should the output be log-likelihood?}
+
+\item{L_intg}{logical. Should the likelihood be integrated over
 suitable borders? Defaults to FALSE, which uses an approximation with
-MVN density.
+point-MVN density.
 Special care needs to be taken when integrating, as the likelihood is
-likely to be 0 in higher dimensions due to machine precision.}
+likely to be 0 in higher dimensions due to machine precision, resulting in
+non-finite log-likelihood.}
 }
 \value{
-numeric vector. The (log) likelihood for each test observation.
+numeric vector. The (log-)likelihood for each test observation.
 }
 \description{
-This function calculates the MVN likelihood.
+This function calculates the MVN likelihood for factor analysis methods.
+If \code{L_intg = FALSE} then an approximation with point-density is used
+instead of integrating over suitable bounds.
 }
 \seealso{
 \code{\link{my_dmvn}} \code{\link{my_omxMnor}}

@@ -2,22 +2,23 @@
 % Please edit documentation in R/L_CFA_approx.R
 \name{L_CFA_approx}
 \alias{L_CFA_approx}
-\title{Compute normal copula likelihood}
+\title{Compute approximate copula likelihood with normal marginals}
 \usage{
 L_CFA_approx(obs, mu, sd, Gamma, logl = T, sd_train)
 }
 \arguments{
-\item{obs}{The data point.}
+\item{obs}{vector. The data point.}
 
-\item{mu}{The estimated mean parameter.}
+\item{mu}{vector. The estimated mean parameter.}
 
-\item{sd}{The estimated standard deviation.}
+\item{sd}{vector. The estimated standard deviation.}
 
-\item{Gamma}{The estimated covariance matrix.}
+\item{Gamma}{matrix. The estimated correlation matrix.}
 
-\item{logl}{Should the output be log-likelihood?}
+\item{logl}{logical. Should the output be log-likelihood?}
 
-\item{sd_train}{The standard deviation of the original data.}
+\item{sd_train}{vector. The standard deviation of the original
+(unstandardized) data.}
 }
 \value{
 The (log-)likelihood.

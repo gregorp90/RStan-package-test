@@ -21,5 +21,5 @@ numeric vector. The (log) density.
 }
 \description{
 This function calculates the MVN density by integrating along
-corresponding bounds (+- 0.5 around the estimated mean value).
+corresponding bounds.
 }

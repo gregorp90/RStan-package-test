@@ -4,13 +4,13 @@
 \alias{train_PFA}
 \title{Train a Poisson factor analysis model}
 \usage{
-train_PFA(train, gp_train, nfac = 2)
+train_PFA(train, gp_train, nfac = 2, ...)
 }
 \arguments{
 \item{train}{data frame. The training data set, consisting of counts.
 Columns represent variables, rows represent observations.}
 
-\item{gp_train}{A vector of groups for each observation.}
+\item{gp_train}{vector. Groups for each observation.}
 
 \item{nfac}{numeric. The number of factors.}
 
