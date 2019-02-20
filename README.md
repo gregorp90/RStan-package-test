@@ -19,11 +19,10 @@ You may have trouble installing the 32-bit and 64-bit versions on Windows. In
 that case only install one version with
 
 ```{r eval = FALSE}
-devtools::install_github("gregorp90/RStan-package-test",
-                         INSTALL_opts = c("--no-multiarch"))
+devtools::install_github("gregorp90/RStan-package-test", INSTALL_opts = c("--no-multiarch"))
 ``` 
 
-which will automatically install arch that is used in your current RStudio
+which will automatically install the arch that is used in your current RStudio
 session. If it still does not install, you may need to check your system Path,
 where the compiler for the desired version should be before the compiler for
 the other version.
@@ -31,10 +30,11 @@ the other version.
 # Use
 The main functionality of the package is training and predicting with
 different factor analysis methods. For that, you only need to use functions
-starting with train_ and pred_. Inputs to functions are very similar, 
-for details see documentation. Additionally there are four sports count data 
+starting with *train_* and *pred_*. Additionally there are four sports count 
+data 
 sets that can be used for the training and evaluation. The data are from the
-English association football Premier League (EPL), National basketball league
+English association football Premier League (EPL), National Basketball 
+Association
 (NBA), National Football League (NFL), and esports League of Legends Champions
 Korea (LCK).
 
@@ -55,3 +55,5 @@ my_eval  <- pred_CNBFA2(my_model, test_grp, test_dat)
 mean(my_eval$likelihoods)
 my_eval$predictions # get predictions for all observations in the test set
 ``` 
+
+Inputs to other methods are similar, for details see documentation. 
